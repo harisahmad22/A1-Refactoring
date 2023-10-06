@@ -3,10 +3,14 @@ package src.test;
 
 import src.model.BasicCalculations;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 public class BasicCalculationsTest {
 
@@ -145,4 +149,24 @@ public class BasicCalculationsTest {
         assertEquals(expectedOutput, printedOutput);
     }
 
+    @Test
+    public void testReadPoly() {
+        BasicCalculations basicCalc = new BasicCalculations();
+        int[] polynomial = new int[BasicCalculations.MAX_SIZE];
+
+        String input = "3 4\n-2 2\n5 1\n0 0\n";
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+
+        System.setIn(inputStream);
+
+        boolean result = basicCalc.readPoly(polynomial);
+
+        // Assert that the function returns true (indicating success)
+        assertTrue(result);
+
+        // Assert that the polynomial array has been populated correctly
+        assertEquals(3, polynomial[4]);
+        assertEquals(-2, polynomial[2]);
+        assertEquals(5, polynomial[1]);
+    }
 }

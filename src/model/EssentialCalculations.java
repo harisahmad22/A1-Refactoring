@@ -45,6 +45,8 @@ public class EssentialCalculations {
 		}		
 		
 		System.out.println("The polynomial evaluates to: " + poly1Value);
+
+		key_board.close();
 		return;
 	}
 	

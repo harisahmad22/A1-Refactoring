@@ -21,44 +21,57 @@ public class BasicCalculations {
 	          int polynomial []
 	Returns:  Nothing.
 	********************************************************************************/
-	public boolean readPoly (int[] polynomial) {
+	public boolean readPoly(int[] polynomial) {
 		int coefficient = 0;
 		boolean repeat = false;
 		boolean success = true;
 		int index = 0;
-
-		clearPoly(polynomial); 
-		System.out.println(); 
+	
+		clearPoly(polynomial);
+		System.out.println();
 		System.out.println("Enter a coefficient and an exponent with only one corresponding base for every exponent.");
-		System.out.println("Format: coefficient exponent, with whitespace in middle. Enter 0 0 to indicate end of polynomial: ");
-		
+		System.out.println("Format: coefficient exponent, with whitespace in the middle. Enter 0 0 to indicate the end of the polynomial: ");
+	
 		Scanner kb = new Scanner(System.in);
-
-		while (kb.hasNextLine() && success == true) {
-			coefficient = Integer.parseInt(kb.next());
-			index = Integer.parseInt(kb.next());
-			
-			if (polynomial [index] != 0 || index >= 21 || index < 0 || (coefficient == 0 && index == 0)){
+	
+		while (kb.hasNextLine()) {
+			if (kb.hasNextInt()) {
+				coefficient = kb.nextInt();
+			} else {
 				success = false;
-	            return success; 
-	        }
-			else {
-				 success = true;
-		         repeat = true;
-		         polynomial[index] = coefficient;
-		    }
+				break;
+			}
+	
+			if (kb.hasNextInt()) {
+				index = kb.nextInt();
+			} else {
+				success = false;
+				break;
+			}
+	
+			if (index == 0 && coefficient == 0) {
+				break; // End of polynomial
+			}
+	
+			if (index < 0 || index >= MAX_SIZE || (coefficient == 0 && index != 0)) {
+				success = false;
+				break;
+			} else {
+				success = true;
+				repeat = true;
+				polynomial[index] = coefficient;
+			}
 		}
-		if (!repeat || !success){
-	        success = false;
-	        repeat = true;    
-	        return success;
+	
+		kb.close();
+	
+		if (!repeat || !success) {
+			success = false;
 		}
-		else{
-			success = true;
-		}
-
+	
 		return success;
-	} 
+	}
+	
 
 
 	/********************************************************************************
@@ -132,7 +145,6 @@ public class BasicCalculations {
 	********************************************************************************/
 	public void clearPoly (int [] polynomial) {
 	    for (int index = 0; index < MAX_SIZE; index ++) { 
-	    
 	        polynomial [index] = 0;
 	    }
 
