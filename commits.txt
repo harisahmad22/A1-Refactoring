@@ -1,0 +1,41 @@
+commit 39cb4d6b57fea5cfc474966e34c8bb07b55246e2
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 03:07:31 2023 -0600
+
+    fifth refactor: added a test case for the readPoly function which I originally refactored to fix a scanner leak, but later when testing had to come back and refactor quite a bit to fix a logic issue in the original code
+
+commit 8958d5fc43191fe6f24f383f4a5c99b29c5da1c3
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 01:55:10 2023 -0600
+
+    fourth refactoring: In this refactor I get rid of multiple bad code smells that all essentially result in code redundancy. I also add a test class and within that, test cases to show that my code is still working as intended despite the changes
+
+commit 5508571fc3b998bbbf20fc83f0af91d84e843df6
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Thu Oct 5 23:55:22 2023 -0600
+
+    third refactoring: in this refactoring I got rid of redundant code within each case of the original switch statement by only creating an object of the processCalculationsClass() once at the start of our main branch and then re-using that object the rest of the program's runtime.
+
+commit 145dd961e455b97d4433442c2afea0906a86d95f
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Thu Oct 5 23:10:01 2023 -0600
+
+    second refactoring: changed the menu loop to use if/else statements rather than a switch statement
+
+commit 3ca8005a72ea9b2dd4b3245c8b48fb1cfc875b1f
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Thu Oct 5 20:47:43 2023 -0600
+
+    first refactoring: created a test class and refactored the while loop in my textApp.java class
+
+commit 969452dff52b07928f3477e49d555987e997aa9f
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Thu Oct 5 10:25:18 2023 -0600
+
+    initial commit of my started code (non-refactored)
+
+commit 3e88ea9de660b95ba3dfdd02e166a17d3a6f008b
+Author: Haris Ahmad <87102091+harisahmad22@users.noreply.github.com>
+Date:   Tue Oct 3 14:31:38 2023 -0600
+
+    Initial commit
