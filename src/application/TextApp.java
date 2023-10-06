@@ -1,4 +1,4 @@
-package application;
+package src.application;
 /********************************************************************************
  * @author Haris Ahmad
  * @author Salman Ahmed
@@ -58,7 +58,7 @@ Details:
 
 import java.util.Scanner;
 
-import model.ProcessCalculations;
+import src.model.ProcessCalculations;
 
 public class TextApp {
 
@@ -80,45 +80,42 @@ public class TextApp {
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		prompt();
-		char choice = input.nextLine().charAt(0);
+		char choice;
 
-		
-		while (choice != 'q')
-	    {
-			
+		do{
+			prompt();
+			choice = input.nextLine().charAt(0);
+
 	        switch (choice)
 	        {
 	        case 'e':
+				System.out.println("You chose evaluate");
 	        	ProcessCalculations e = new ProcessCalculations();
 	            e.process_evaluate ();
-
 	            break;
-
 	        case 'd':
+				System.out.println("You chose differentiate");
 	        	ProcessCalculations d = new ProcessCalculations();
 	            d.process_differentiate ();
-
 	            break;
-
 	        case 'a':
+				System.out.println("You chose add");
 	        	ProcessCalculations a = new ProcessCalculations();
 	            a.process_addition ();
-
 	            break;
-
 	        case 'm':
+				System.out.println("You chose multiply");
 	        	ProcessCalculations m = new ProcessCalculations();
 	            m.process_multiply ();
-
 	            break;
-
 	        case 'r':
+				System.out.println("You chose roots");
 	        	ProcessCalculations r = new ProcessCalculations();
 	            r.process_roots ();
-
 	            break;
-
+			case 'q':
+				System.out.println("***  Exiting program  ***");
+				break;
 	        default:
 	            System.out.println("You chose an invalid option, please select a valid entry - ");
 	            break;
@@ -127,19 +124,7 @@ public class TextApp {
 			System.out.println();
 			System.out.println();
 
-	        System.out.println("Enter another choice. ");
-	        prompt();
-			
-
-	        choice = input.nextLine().charAt(0);
-	}
-	
-	switch (choice) {
-	case 'q':
-		System.out.println();
-		System.out.println("***  Exiting program  ***");
-		return;
-	}
+		} while (choice != 'q');
 	
 	return;
 	}

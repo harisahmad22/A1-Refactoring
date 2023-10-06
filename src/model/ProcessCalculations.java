@@ -1,4 +1,4 @@
-package model;
+package src.model;
 /**
  * 
  * @author Haris Ahmad
@@ -34,7 +34,6 @@ public class ProcessCalculations {
 	********************************************************************************/
 	public void process_evaluate()
 	{   
-	    System.out.println("You chose evaluate");
 	    System.out.println("Please input a polynomial with the highest exponent being less "
 	    		+ "than or equal to 20.");
 	    
@@ -70,7 +69,6 @@ public class ProcessCalculations {
 	{
 	    int[] diff_poly = new int [BasicCalculations.MAX_SIZE];   // the differentiated polynomial array
 
-	    System.out.println("You chose differentiate");
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
 	    		+ "or equal to 20.");
 	    
@@ -111,7 +109,6 @@ public class ProcessCalculations {
 	    int[] polySum = new int [BasicCalculations.MAX_SIZE];     /* the polynomial's sum resulting from the
 	                                    		   addition of the first and second arrays */
 
-	    System.out.println("You chose add");
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
 	    		+ "or equal to 20.");
 
@@ -165,7 +162,6 @@ public class ProcessCalculations {
 	    basics.clearPoly (poly2);
 	    basics.clearPoly (product);
 
-	    System.out.println("You chose multiply");
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
 	    		+ "or equal to 20.");
 	    basics.readPoly (poly1);
@@ -212,7 +208,6 @@ public class ProcessCalculations {
 	    EssentialCalculations essentials = new EssentialCalculations();
 	    BasicCalculations basics = new BasicCalculations();
 	    
-	    System.out.println("You chose roots");
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
 	    		+ "or equal to 20.");
 	    
