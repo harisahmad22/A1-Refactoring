@@ -1,3 +1,15 @@
+commit 5831ca8d1c7684ad827f1f08aabba3d5ff50f571
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 17:55:07 2023 -0600
+
+    sixth refactor: the code does not work but I have refactored it so that the EssentialCalculation methods are all in separate classes now. Also got rid of the refactor I did for the fifth refactor commit
+
+commit d7e842756524978c6dcbf62a49f9ee61d5f8ceb5
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 11:22:16 2023 -0600
+
+    creating a new git log report to reflect the most recent change
+
 commit 3d3ce81cfca35c923ef0c7c4b0a9126582bec247
 Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
 Date:   Fri Oct 6 11:19:48 2023 -0600
