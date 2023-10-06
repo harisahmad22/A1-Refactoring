@@ -80,30 +80,27 @@ public class TextApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		char choice;
+		ProcessCalculations operation = new ProcessCalculations();
+
 
 		do{
 			prompt();
 			choice = input.nextLine().charAt(0);
 
 	        if (choice == 'e'){
-				ProcessCalculations e = new ProcessCalculations();
-				e.process_evaluate();
+				operation.process_evaluate();
 			}
 			else if (choice == 'd'){
-				ProcessCalculations d = new ProcessCalculations();
-				d.process_differentiate();
+				operation.process_differentiate();
 			}
 			else if (choice == 'a'){
-				ProcessCalculations a = new ProcessCalculations();
-				a.process_addition();
+				operation.process_addition();
 			}
 			else if (choice == 'm'){
-				ProcessCalculations m = new ProcessCalculations();
-				m.process_multiply();
+				operation.process_multiply();
 			}
 			else if (choice == 'r'){
-				ProcessCalculations r = new ProcessCalculations();
-				r.process_roots();
+				operation.process_roots();
 			}
 			else if (choice == 'q'){
 				System.out.println("***  Exiting program  ***");
@@ -112,10 +109,8 @@ public class TextApp {
 			else {
 				System.out.println("You chose an invalid option, please select a valid entry - ");
 			}
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			
+			System.out.println("\n\n");
+
 		} while (choice != 'q');
 
 		input.close();

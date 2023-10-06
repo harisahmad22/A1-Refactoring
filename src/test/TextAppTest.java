@@ -34,18 +34,6 @@ public class TextAppTest {
     }
 
     @Test
-    public void testQuitOperation() {
-        String input = "q\n";
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inputStream);
-
-        TextApp.main(new String[]{});
-
-        String expectedOutput = "***  Exiting program  ***";
-        assertTrue(outContent.toString().contains(expectedOutput));
-    }
-
-    @Test
     public void testEvaluateOperation() {
         String input = "e\nq\n";
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
@@ -107,7 +95,20 @@ public class TextAppTest {
     }
 
     @Test
-    public void testMulitpleOperation() {
+    public void testSuccessfulQuitOperation() {
+        String input = "q\n";
+        InputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        TextApp.main(new String[]{});
+
+        String expectedOutput = "***  Exiting program  ***";
+
+        assertTrue(outContent.toString().contains(expectedOutput));
+    }
+
+    @Test
+    public void testMulitpleOperations() {
         String input = "e\nr\nm\nq\n";
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(inputStream);
