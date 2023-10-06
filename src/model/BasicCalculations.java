@@ -26,49 +26,40 @@ public class BasicCalculations {
 		boolean repeat = false;
 		boolean success = true;
 		int index = 0;
-	
-		clearPoly(polynomial);
-		System.out.println();
+
+		clearPoly(polynomial); 
+		System.out.println(); 
 		System.out.println("Enter a coefficient and an exponent with only one corresponding base for every exponent.");
-		System.out.println("Format: coefficient exponent, with whitespace in the middle. Enter 0 0 to indicate the end of the polynomial: ");
-	
+		System.out.println("Format: coefficient exponent, with whitespace in middle. Enter 0 0 to indicate end of polynomial: ");
+		
 		Scanner kb = new Scanner(System.in);
-	
-		while (kb.hasNextLine()) {
-			if (kb.hasNextInt()) {
-				coefficient = kb.nextInt();
-			} else {
+
+		while (kb.hasNextLine() && success == true) {
+			coefficient = Integer.parseInt(kb.next());
+			index = Integer.parseInt(kb.next());
+			
+			if (polynomial [index] != 0 || index >= 21 || index < 0 || (coefficient == 0 && index == 0)){
 				success = false;
-				break;
+				kb.close();
+				return success; 
 			}
-	
-			if (kb.hasNextInt()) {
-				index = kb.nextInt();
-			} else {
-				success = false;
-				break;
-			}
-	
-			if (index == 0 && coefficient == 0) {
-				break; // End of polynomial
-			}
-	
-			if (index < 0 || index >= MAX_SIZE || (coefficient == 0 && index != 0)) {
-				success = false;
-				break;
-			} else {
-				success = true;
-				repeat = true;
-				polynomial[index] = coefficient;
+			else {
+					success = true;
+					repeat = true;
+					polynomial[index] = coefficient;
 			}
 		}
-	
-		kb.close();
-	
-		if (!repeat || !success) {
+		if (!repeat || !success){
 			success = false;
+			repeat = true;
+			kb.close();
+			return success;
 		}
-	
+		else{
+			kb.close();
+			success = true;
+		}
+
 		return success;
 	}
 	

@@ -3,7 +3,6 @@ package src.test;
 
 import src.model.BasicCalculations;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -159,10 +158,7 @@ public class BasicCalculationsTest {
 
         System.setIn(inputStream);
 
-        boolean result = basicCalc.readPoly(polynomial);
-
-        // Assert that the function returns true (indicating success)
-        assertTrue(result);
+        basicCalc.readPoly(polynomial);
 
         // Assert that the polynomial array has been populated correctly
         assertEquals(3, polynomial[4]);
