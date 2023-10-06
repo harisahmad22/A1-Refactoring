@@ -57,7 +57,6 @@ Details:
 ********************************************************************************/
 
 import java.util.Scanner;
-
 import src.model.ProcessCalculations;
 
 public class TextApp {
@@ -77,7 +76,7 @@ public class TextApp {
 		System.out.println();
 		System.out.println("Please input your choice: ");
 	}
-	
+
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		char choice;
@@ -86,47 +85,41 @@ public class TextApp {
 			prompt();
 			choice = input.nextLine().charAt(0);
 
-	        switch (choice)
-	        {
-	        case 'e':
-				System.out.println("You chose evaluate");
-	        	ProcessCalculations e = new ProcessCalculations();
-	            e.process_evaluate ();
-	            break;
-	        case 'd':
-				System.out.println("You chose differentiate");
-	        	ProcessCalculations d = new ProcessCalculations();
-	            d.process_differentiate ();
-	            break;
-	        case 'a':
-				System.out.println("You chose add");
-	        	ProcessCalculations a = new ProcessCalculations();
-	            a.process_addition ();
-	            break;
-	        case 'm':
-				System.out.println("You chose multiply");
-	        	ProcessCalculations m = new ProcessCalculations();
-	            m.process_multiply ();
-	            break;
-	        case 'r':
-				System.out.println("You chose roots");
-	        	ProcessCalculations r = new ProcessCalculations();
-	            r.process_roots ();
-	            break;
-			case 'q':
+	        if (choice == 'e'){
+				ProcessCalculations e = new ProcessCalculations();
+				e.process_evaluate();
+			}
+			else if (choice == 'd'){
+				ProcessCalculations d = new ProcessCalculations();
+				d.process_differentiate();
+			}
+			else if (choice == 'a'){
+				ProcessCalculations a = new ProcessCalculations();
+				a.process_addition();
+			}
+			else if (choice == 'm'){
+				ProcessCalculations m = new ProcessCalculations();
+				m.process_multiply();
+			}
+			else if (choice == 'r'){
+				ProcessCalculations r = new ProcessCalculations();
+				r.process_roots();
+			}
+			else if (choice == 'q'){
 				System.out.println("***  Exiting program  ***");
 				break;
-	        default:
-	            System.out.println("You chose an invalid option, please select a valid entry - ");
-	            break;
-	        }
+			}
+			else {
+				System.out.println("You chose an invalid option, please select a valid entry - ");
+			}
 			System.out.println();
 			System.out.println();
 			System.out.println();
-
+			
 		} while (choice != 'q');
-	
-	return;
+
+		input.close();
+		return;
 	}
 }
 		
