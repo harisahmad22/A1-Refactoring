@@ -43,8 +43,9 @@ public class ProcessCalculations {
 	    basics.printPoly (poly1);
 
         System.out.print("Enter value for the unknown: ");
-        EssentialCalculations evaluate = new EssentialCalculations();
-	    evaluate.evaluate (poly1, x, polynomial1Value);
+		
+        EssentialCalculations calc = new EvaluateCalculator();
+		calc.evaluate(poly1, x, polynomial1Value);
 	        
 	    return;
 	}
@@ -75,16 +76,16 @@ public class ProcessCalculations {
 	    		+ "or equal to 20.");
 	    
 	    BasicCalculations basics = new BasicCalculations();
-	    EssentialCalculations essentials = new EssentialCalculations();
+		EssentialCalculations calc = new DifferentiateCalculator();
 	    
-	    basics.readPoly (poly1);
+		basics.readPoly (poly1);
 	    basics.printPoly (poly1);
 
         basics.clearPoly (diff_poly);
 
         System.out.print("Differentiated polynomial equals: ");
 
-	    essentials.differentiate (poly1, diff_poly);
+	    calc.differentiate (poly1, diff_poly);
 	    basics.printPoly (diff_poly);
 	    
 	    return;
@@ -115,8 +116,9 @@ public class ProcessCalculations {
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
 	    		+ "or equal to 20.");
 
-	    EssentialCalculations essentials = new EssentialCalculations();
-	    BasicCalculations basics = new BasicCalculations();
+		EssentialCalculations calc = new SumCalculator();
+		calc.evaluate(poly1, x, polynomial1Value);	    
+		BasicCalculations basics = new BasicCalculations();
 
 	    basics.readPoly (poly1);
 	    System.out.println("Please input a another polynomial with the highest exponent being less "
@@ -128,7 +130,7 @@ public class ProcessCalculations {
 	    basics.printPoly (poly2);
 	    System.out.println("==============================");
 
-	    essentials.sumPoly (poly1, poly2, polySum);
+	    calc.sumPoly (poly1, poly2, polySum);
 	    basics.printPoly (polySum);
 
 	    return;
@@ -158,8 +160,8 @@ public class ProcessCalculations {
 	{
 	    int[] product = new int[BasicCalculations.MAX_SIZE];    // the array for the product after multiplication
 
-	    EssentialCalculations essentials = new EssentialCalculations();
-	    BasicCalculations basics = new BasicCalculations();
+		EssentialCalculations calc = new MultiplyCalculator();
+		BasicCalculations basics = new BasicCalculations();
 
 	    basics.clearPoly (poly1);
 	    basics.clearPoly (poly2);
@@ -175,7 +177,7 @@ public class ProcessCalculations {
 	    basics.readPoly (poly2);
 	    
 	    System.out.println();
-	    essentials.multiplyPolys (poly1, poly2, product);
+	    calc.multiplyPolys (poly1, poly2, product);
 	    
 	    System.out.println("Performing multiplication on the polynomials");
 	    basics.printPoly (poly1);
@@ -209,8 +211,8 @@ public class ProcessCalculations {
 	********************************************************************************/
 	public void process_roots()
 	{
-	    EssentialCalculations essentials = new EssentialCalculations();
-	    BasicCalculations basics = new BasicCalculations();
+		EssentialCalculations calc = new RootsCalculator();
+		BasicCalculations basics = new BasicCalculations();
 	    
 		System.out.println("You chose roots");
 	    System.out.println("Please input a polynomial with the highest exponent being less than "
@@ -225,7 +227,7 @@ public class ProcessCalculations {
 
 	    System.out.println("has: ");
 
-	    rootsInfo = essentials.rootsPoly(poly1);
+	    rootsInfo = calc.rootsPoly(poly1);
 	    
 	    numRealRoots = (int)rootsInfo[0];
 	

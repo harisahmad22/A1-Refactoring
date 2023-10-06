@@ -21,7 +21,7 @@ public class BasicCalculations {
 	          int polynomial []
 	Returns:  Nothing.
 	********************************************************************************/
-	public boolean readPoly(int[] polynomial) {
+	public boolean readPoly (int[] polynomial) {
 		int coefficient = 0;
 		boolean repeat = false;
 		boolean success = true;
@@ -40,29 +40,25 @@ public class BasicCalculations {
 			
 			if (polynomial [index] != 0 || index >= 21 || index < 0 || (coefficient == 0 && index == 0)){
 				success = false;
-				kb.close();
-				return success; 
-			}
+	            return success; 
+	        }
 			else {
-					success = true;
-					repeat = true;
-					polynomial[index] = coefficient;
-			}
+				 success = true;
+		         repeat = true;
+		         polynomial[index] = coefficient;
+		    }
 		}
 		if (!repeat || !success){
-			success = false;
-			repeat = true;
-			kb.close();
-			return success;
+	        success = false;
+	        repeat = true; 
+	        return success;
 		}
 		else{
-			kb.close();
 			success = true;
 		}
 
 		return success;
-	}
-	
+	} 
 
 
 	/********************************************************************************
