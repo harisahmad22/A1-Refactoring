@@ -76,69 +76,46 @@ public class BasicCalculations {
 	Returns:  Nothing.
 	********************************************************************************/
 	public void printPoly (int[] polynomial) {
-		int max_exponent = -1; 
-		for (int index = (MAX_SIZE - 1); index >= 0; index--) { 
-		        if (polynomial[index] != 0)
-		        {
-		            if (max_exponent < index)
-		            {
-		                if (polynomial[index] == -1)
-		                {
-		                    max_exponent = index;
-		                    System.out.print("-");
-		                }
-		                else if (polynomial[index] == 1)
-		                {
-		                    max_exponent = index;
-		                }
-		                else
-		                {
-		                    max_exponent = index;
-		                    System.out.print(polynomial[max_exponent]);
-		                }
-		            }
-		            else if (polynomial[index] == 1)
-		            {
-		            	 System.out.print(" + ");
-		            }
-		            else if (polynomial[index] == -1)
-		            {
-		            	 System.out.print(" - ");
-		            }
-		            else if (polynomial[index] > 0)
-		            {
-		            	 System.out.print(" + " + polynomial[index]);
-		            }
-		            else if (polynomial[index] < 0)
-		            {
-		            	 System.out.print(" - " + (polynomial[index] * -1));
-		            }
-		            if (index > 1 && index < 21)
-		            {
-		            	 System.out.print("x^" + index);
-		            }
-		            if (index == 1)
-		            {
-		            	 System.out.print("x");
-		            }
-		            if (index == 0 && polynomial[index] == (-1))
-		            {
-		            	 System.out.print(polynomial[index] * -1);
-		            }
-		            if (index == 0 && polynomial[index] == 1)
-		            {
-		            	 System.out.print(polynomial[index]);
-		            }
-		        }
-		        else if (max_exponent < index && index == 0)
-		        {
-		        	 System.out.print("0");
-		        }
-		    }
-		 System.out.println();
+		int max_exponent = -1;
+		boolean isFirstTerm = true;
 
-		    return;
+		for (int index = MAX_SIZE - 1; index >= 0; index--) {
+			int coefficient = polynomial[index];
+
+			if (coefficient != 0) {
+				if (!isFirstTerm) {
+					if (coefficient > 0) {
+						System.out.print(" + ");
+					} else {
+						System.out.print(" - ");
+						coefficient *= -1;
+					}
+				} else {
+					isFirstTerm = false;
+				}
+
+				if (coefficient != 1 || index == 0) {
+					System.out.print(coefficient);
+				}
+
+				if (index > 1) {
+					System.out.print("x^" + index);
+				} else if (index == 1) {
+					System.out.print("x");
+				}
+
+				max_exponent = index;
+			}
 		}
+
+		if (max_exponent == -1) {
+			System.out.print("0");
+		}
+
+		System.out.println();
+
+		return;
+	}
 
 
 	/********************************************************************************
