@@ -1,3 +1,21 @@
+commit 3d3ce81cfca35c923ef0c7c4b0a9126582bec247
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 11:19:48 2023 -0600
+
+    there was a bug and my code would not work so I modified my test case/code for the readPoly()
+
+commit c98a7613c69583d1ea5c3f293b79c0946df19498
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 03:25:46 2023 -0600
+
+    added my report to this repository as well
+
+commit 10f8c367d11c7a8c798a89c129ff78ccd845847b
+Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
+Date:   Fri Oct 6 03:18:24 2023 -0600
+
+    Saving all my commit logs onto a text file for assignment submission
+
 commit 39cb4d6b57fea5cfc474966e34c8bb07b55246e2
 Author: Haris Ahmad <haris.ahmad1@ucalgary.ca>
 Date:   Fri Oct 6 03:07:31 2023 -0600
